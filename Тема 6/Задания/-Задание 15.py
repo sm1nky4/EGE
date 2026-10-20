@@ -16,7 +16,7 @@ for x in range(-50, 50):
         dot(2)
 exitonclick()
 
-answer = 60
+answer = 63
 
 #
 
