@@ -1,7 +1,7 @@
 from turtle import *
-
+screensize(2000, 2000)
 tracer(0)
-koef = 20
+koef = 30
 
 for i in range(4):
     forward(14 * koef)
@@ -13,10 +13,10 @@ up()
 for x in range(-50, 50):
     for y in range(-50, 50):
         goto(x * koef, y * koef)
-        dot(3)
+        dot(2)
 exitonclick()
 
-answer = 71
+answer = 60
 
 #
 
