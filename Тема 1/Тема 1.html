@@ -37,8 +37,10 @@
 
             <div class="example-box">
                 <h4>📸 Визуальное представление:</h4>
-                <img src="../assets/images/img_type1_1.png" alt="Граф дорог" class="content-image" onerror="this.style.display='none';">
-                <img src="../assets/images/img_type1_2.png" alt="Таблица расстояний" class="content-image" onerror="this.style.display='none';">
+                <div class="image-row">
+                    <img src="../assets/images/img_type1_1.png" alt="Граф дорог" class="content-image" onerror="this.style.display='none';">
+                    <img src="../assets/images/img_type1_2.png" alt="Таблица расстояний" class="content-image" onerror="this.style.display='none';">
+                </div>
             </div>
         </section>
 
@@ -215,7 +217,13 @@
 
         <section id="code" class="section">
             <h2><span class="emoji">💻</span>Способ 2: Программное решение</h2>
-
+            <div class="example-box">
+                <h4>📸 Визуальное представление:</h4>
+                <div class="image-row">
+                    <img src="../assets/images/img_type1_1.png" alt="Граф дорог" class="content-image" onerror="this.style.display='none';">
+                    <img src="../assets/images/img_type1_2.png" alt="Таблица расстояний" class="content-image" onerror="this.style.display='none';">
+                </div>
+            </div>
             <p>Тот же принцип (совпадение структуры связей) можно проверить автоматически перебором всех перестановок букв — так надёжнее, если вручную сложно отследить все связи.</p>
 
             <div class="task-card">
@@ -226,13 +234,13 @@
 
 table = '12 17 21 27 28 34 35 37 43 47 53 57 67 68 71 72 73 74 75 76 78 82 86 87'
 graph = 'AB BA AC CA AD DA BC CB CD DC AE EA AF FA AG GA AH HA EF FE FG GF GH HG'
-
+print("1 2 3 4 5 6 7 8")
 for p in permutations('ABCDEFGH'):
     new_graph = table
     for i in range(1, 9):
         new_graph = new_graph.replace(str(i), p[i - 1])
     if set(new_graph.split()) == set(graph.split()):
-        print(p)</code></pre>
+        print(*p)</code></pre>
                     </div>
                 </div>
             </div>
@@ -344,6 +352,25 @@ for p in permutations('ABCDEFGH'):
         display: block;
         border-radius: 8px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .image-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .image-row .content-image {
+        max-width: 48%;
+        margin: 15px 0;
+    }
+
+    @media (max-width: 768px) {
+        .image-row .content-image {
+            max-width: 100%;
+        }
     }
 
     .back-to-top {
